@@ -4,6 +4,8 @@ leftwrX=0;
 rightwrX=0;
 leftwrY=0;
 rightwrY=0;
+scoreLeftwrist=0;
+staus="";
 
 function preload(){
     song1=loadSound("Legends Never Die.mp3");
@@ -36,6 +38,8 @@ function gotPoses(results){
         left_wr_x=results[0].pose.leftWrist.x;
         left_wr_y=results[0].pose.leftWrist.y;
         console.log("X   Position of left wrist is "+left_wr_x+" And Y Position is "+left_wr_y);
+        scoreLeftWrist=results[0].pose.keypoints[9].score;
+        console.log("Score of Left Wrist = "+scoreLeftWrist);
     }
 
 }
